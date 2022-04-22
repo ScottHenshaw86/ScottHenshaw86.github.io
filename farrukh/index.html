@@ -6,28 +6,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/6de8a07319.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
+    <header>
+      <div class="headerText">When in doubt, build something!</div>
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Skills</li>
+          <li>Portfolio</li>
+          <li>Blog</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+    </header>
     <div class="container">
       <h1>About Me</h1>
-      <hr />
+      <hr class="topDivider" />
       <div class="bottom">
         <div class="left">
           <img
             class="profile"
-            src="https://picsum.photos/150"
+            src="https://www.atabekov.com/images/portfolio.jpg"
             alt="profile image"
           />
           <div class="social">
-            <div class="iconA"></div>
-            <div class="iconA"></div>
-            <div class="iconA"></div>
-            <div class="iconD"></div>
+            <i class="icon fab fa-github fa-3x"></i>
+            <i class="icon fab fa-facebook-square fa-3x"></i>
+            <i class="icon fab fa-linkedin fa-3x"></i>
+            <i class="icon far fa-envelope fa-3x"></i>
           </div>
-          <div class="contact"></div>
+          <div class="contact">
+            <button
+              id="sendMessageButton "
+              class="sim-btn btn-hover-new rounded"
+              data-text="Send Message "
+              type="submit "
+            >
+              Email
+            </button>
+            <button
+              id="sendMessageButton "
+              class="sim-btn btn-hover-new rounded"
+              data-text="Send Message "
+              type="submit "
+            >
+              My Resume
+            </button>
+          </div>
         </div>
-        <div class="right"></div>
+        <div class="right">
+          <p><strong>Welcome to my blog!👋</strong></p>
+          <p>
+            I am a software engineer with robust experience in web, dedicated to
+            learning and building projects with tools such as
+          </p>
+          <div class="tools">
+            <hr />
+            <i
+              class="fab fa-js-square fa-6x"
+              style="color: yellow"
+              aria-hidden="true"
+            ></i>
+            <i
+              class="fab fa-react fa-6x"
+              style="color: #61dbfb"
+              aria-hidden="true"
+            ></i>
+            <i
+              class="fab fa-node fa-6x"
+              style="color: green"
+              aria-hidden="true"
+            ></i>
+            <i
+              class="fab fa-npm fa-6x"
+              style="color: red"
+              aria-hidden="true"
+            ></i>
+            <i
+              class="fab fa-python fa-6x"
+              style="color: #306998"
+              aria-hidden="true"
+            ></i>
+            <hr />
+          </div>
+          <p>
+            Currently working as a React Native developer in Seoul, I am also
+            building new apps with React Native and Flutter🚀
+          </p>
+          <p>
+            I love building new products and emerge in the fire of learning to
+            come up with smarter and EASIER ways to solve problems 💻😉
+          </p>
+          <p>
+            Please, ping via email if you want to contact me for product
+            suggestions
+          </p>
+        </div>
       </div>
     </div>
+    <!-- <script>
+      window.onload = function () {
+        var span = document.createElement("span");
+
+        span.className = "fas";
+        span.style.display = "none";
+        document.body.insertBefore(span, document.body.firstChild);
+
+        alert(
+          window.getComputedStyle(span, null).getPropertyValue("font-family")
+        );
+
+        document.body.removeChild(span);
+      };
+    </script> -->
   </body>
 </html>
