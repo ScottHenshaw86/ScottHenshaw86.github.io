@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>About Me</h1>
+      <hr />
+      <div class="bottom">
+        <div class="left">
+          <img
+            class="profile"
+            src="https://picsum.photos/150"
+            alt="profile image"
+          />
+          <div class="social">
+            <div class="iconA"></div>
+            <div class="iconA"></div>
+            <div class="iconA"></div>
+            <div class="iconD"></div>
+          </div>
+          <div class="contact"></div>
+        </div>
+        <div class="right"></div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<div class="inputRow">
+  <div class="inputContainer">
+    <input
+      type="text"
+      name="firstname"
+      id="firstname"
+      minlength="1"
+      maxlength="20"
+    />
+    <label class="required" for="firstname">First name &nbsp;*</label>
+  </div>
+  <span class="error">All fields with an * are mandatory.</span>
+</div>
+
+<div class="pwdContainer inputRow">
+  <label class="required" for="pwd">Password &nbsp;*</label>
+  <div class="inputContainer">
+    <input type="password" name="pwd" id="pwd" />
+    <div class="tooltip">
+      <div class="arrow-left"></div>
+      <p>Password must:</p>
+      <ul>
+        <li>Have at least 8 characters</li>
+        <li>Contain a number</li>
+        <li>Contain a capital letter</li>
+      </ul>
+    </div>
+    <span class="error">All fields with an * are mandatory.</span>
+    <span class="error"
+      >You have to include capital letters, numbers and do not use your previous
+      passwords.</span
+    >
+  </div>
+</div>
+
+<div class="membershipRow">
+  <div class="membershipInputContainer">
+    <input type="text" name="memberNb" id="memberNb" />
+    <label class="required" for="memberNb">MemberShip number *</label>
+  </div>
+  <a href="#">Where can you find your membership number ? ></a>
+  <span class="error">All fields with an * are mandatory.</span>
+</div>
+
+<div class="membershipRow">
+  <div class="membershipInputContainer">
+    <input type="text" name="zipCode" id="zipCode" />
+    <label class="required" for="zipCode">My postal Code *</label>
+  </div>
+  <span class="error">All fields with an * are mandatory.</span>
+</div>

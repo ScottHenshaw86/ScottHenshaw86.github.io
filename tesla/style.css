@@ -1,0 +1,471 @@
+@font-face {
+  font-family: tesla;
+  src: url("../tesla/assets/tesla.ttf");
+}
+
+@font-face {
+  font-family: gotham;
+  src: url("../tesla/assets/Gotham Book Regular.otf");
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: gotham, sans-serif;
+  color: white;
+}
+
+div,
+header,
+footer,
+ul,
+li,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 900;
+}
+
+#page1,
+#page2,
+#page3 {
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+}
+
+#page1 {
+  position: relative;
+  overflow: hidden;
+}
+
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../tesla/assets/Homepage_Desktop_Bluesky.jpeg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  z-index: -10;
+  transform-origin: 67.75% 61%;
+  animation: zoomIn 0.9s ease-in-out 1s 1 normal forwards;
+}
+
+@keyframes zoomIn {
+  100% {
+    transform: scale(2.8);
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 15px 20px 15px 21px;
+}
+
+.logo {
+  font-family: tesla, sans-serif;
+  flex: 1;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+}
+
+header ul {
+  display: flex;
+  font-weight: bold;
+}
+
+.middleMenu {
+  flex: 4;
+  justify-content: center;
+}
+
+.middleMenu li {
+  margin: 0 10px;
+}
+
+.rightMenu {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.rightMenu li {
+  margin: 0 40px 0 -15px;
+}
+
+#popOutMenu {
+  position: absolute;
+  top: 0;
+  right: -261px;
+  width: 221px;
+  height: 100%;
+  padding: 52px 20px 20px 20px;
+  background-color: white;
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 10;
+  text-transform: uppercase;
+}
+
+#popOutMenu ul {
+  height: 90%;
+  overflow-x: auto;
+}
+
+#popOutMenu ul::-webkit-scrollbar {
+  display: none;
+}
+
+#popOutMenu li {
+  padding: 20px 10px;
+  border-bottom: 1px solid #d0d1d2;
+  font-weight: bold;
+}
+
+.hamburger {
+  position: absolute;
+  top: 10px;
+  left: -44px;
+}
+
+.hamburger:before,
+.hamburger:after,
+.hamburger div {
+  display: block;
+  background-color: white;
+  width: 17px;
+  height: 2px;
+  border-radius: 1px;
+  margin: 4px 0;
+  content: "";
+  color: white;
+  transition: all 0.3s linear;
+}
+
+#popOutMenu:hover {
+  right: 0px;
+  transition: 0.5s;
+}
+
+#popOutMenu:hover .hamburger {
+  left: 218px;
+  transition: 0.5s;
+}
+
+#popOutMenu:hover .hamburger:before {
+  background-color: black;
+  transform: translateY(6px) rotate(495deg);
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+#popOutMenu:hover .hamburger:after {
+  background-color: black;
+  transform: translateY(-6px) rotate(-495deg);
+  transition: 0.5s;
+}
+
+#popOutMenu:hover .hamburger div {
+  background-color: black;
+  transform: scale(0);
+  transition: 0.5s;
+}
+
+.mainContent {
+  position: relative;
+}
+
+#navbar {
+  position: fixed;
+  top: 40%;
+  left: 10px;
+  z-index: 10;
+}
+
+#navbar a {
+  display: block;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+
+#navbar span {
+  vertical-align: middle;
+  font-size: 10.5px;
+  opacity: 0;
+}
+
+#navbar a:hover span {
+  opacity: 1;
+}
+
+#navbar a:hover {
+  text-shadow: -1px 0 white, 1px 0 white;
+}
+
+#navbar a:hover span {
+  text-shadow: none;
+}
+
+.productInfo {
+  text-align: center;
+  margin-top: 16.5vh;
+}
+
+button {
+  height: 40px;
+  width: 250px;
+  margin: 8px;
+  border: 3px solid white;
+  border-radius: 3em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.buttonSolid {
+  color: #171a20;
+  background-color: white;
+}
+
+.buttonTransparent {
+  background-color: transparent;
+  color: white;
+}
+
+.buttonSolid:hover {
+  background-color: #fbfbfb;
+  border-color: #fbfbfb;
+}
+
+.buttonTransparent:hover {
+  background-color: white;
+  color: #171a20;
+  transition: 0.5s;
+}
+
+.fadeIn {
+  opacity: 0;
+  animation: fadeIn 1s ease-out 1s 1 normal forwards;
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+.shiftUp {
+  animation: shiftUp 0.9s ease-in-out 1s 1 normal forwards;
+}
+
+@keyframes shiftUp {
+  0% {
+    transform: translateY(42px);
+  }
+
+  /* 100% {
+      transform: translateY(0px);
+  } */
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 5px;
+  height: 60px;
+  text-align: center;
+  font-size: 0.8em;
+  text-transform: capitalize;
+}
+
+.delivery {
+  padding-bottom: 1px;
+}
+
+.delivery:hover {
+  text-decoration: underline;
+}
+
+.fa-chevron-down,
+.fa-chevron-up {
+  font-size: 1.7em;
+}
+
+.bouncingArrow {
+  animation: bounce 2s ease-out 1.5s infinite normal;
+  color: white;
+  height: 20px;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(2px);
+  }
+
+  60% {
+    transform: translateY(2px);
+  }
+
+  70% {
+    transform: translateY(8px);
+  }
+
+  80% {
+    transform: translateY(2px);
+  }
+
+  90% {
+    transform: translateY(6px);
+  }
+
+  100% {
+    transform: translateY(2px);
+  }
+}
+
+#page2 {
+  position: relative;
+  background: url("../tesla/assets/homepage_energy_hero_desktop.jpeg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#page2 h1 {
+  margin-bottom: 8px;
+}
+
+#page2 p {
+  margin-bottom: 10px;
+}
+
+#page2 .mainContent a {
+  font-size: 0.9em;
+  border-bottom: 1px solid white;
+  padding-bottom: 1px;
+}
+
+#page3 {
+  position: relative;
+  background: url("../tesla/assets/accessories_desktop_poster.jpeg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#page3 h1 {
+  margin-bottom: 15px;
+}
+
+.page3Footer {
+  height: 70px;
+  background-color: white;
+  color: black;
+}
+
+.page3Footer ul {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page3Footer li {
+  padding: 0 12px;
+}
+
+#S {
+  position: absolute;
+  bottom: 70px;
+  left: 46.5%;
+}
+
+#X {
+  position: absolute;
+  bottom: 70px;
+  left: 48.5%;
+}
+
+#model3 {
+  position: absolute;
+  bottom: 70px;
+  left: 50.5%;
+}
+
+#Y {
+  position: absolute;
+  bottom: 70px;
+  left: 52.5%;
+}
+
+#S:checked ~ div {
+  transform-origin: 2% 61%;
+  transition: 0.3s;
+}
+
+#S:checked ~ h1:before {
+  content: "Model S";
+}
+
+#X:checked ~ div {
+  transform-origin: 29% 61%;
+  transition: 0.3s;
+}
+
+#X:checked ~ h1:before {
+  content: "Model X";
+}
+
+#model3:checked ~ div {
+  transform-origin: 67.75% 61%;
+  transition: 0.3s;
+}
+
+#model3:checked ~ h1:before {
+  content: "Model 3";
+}
+
+#Y:checked ~ div {
+  transform-origin: 98% 61%;
+  transition: 0.3s;
+}
+
+#Y:checked ~ h1:before {
+  content: "Model Y";
+}
+
+.currentModel {
+  position: absolute;
+  top: 13vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+input[type="radio"] {
+  transform: translate(-50%, 0);
+}
+
+.page1Footer {
+  display: flex;
+  flex-direction: column;
+}

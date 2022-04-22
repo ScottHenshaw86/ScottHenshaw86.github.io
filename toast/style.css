@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+body::before {
+  content: "";
+  background-image: url("https://picsum.photos/1920/1080");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: -1;
+}
+
+button {
+  padding: 20px 100px;
+  margin: 20px;
+}
+
+.row {
+  display: flex;
+}
+
+.toast {
+  position: absolute;
+  top: -100px;
+  width: 600px;
+  height: 100px;
+  background-color: tomato;
+  opacity: 0;
+  /* transition: top 2s linear, background-color 2s linear, opacity 2s linear; */
+}
+
+#btn1:hover + .toast {
+  opacity: 1;
+  top: 100px;
+  background-color: dodgerblue;
+  /* animation-name: showToast; */
+  /* animation-duration: 4s; */
+  animation: showToast 2s linear, hideToast 20s linear 4s;
+}
+
+@keyframes showToast {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 100px;
+  }
+}
+
+@keyframes hideToast {
+  0% {
+    top: 100px;
+  }
+  10% {
+    top: -100px;
+  }
+
+  100% {
+    top: -100px;
+  }
+}
