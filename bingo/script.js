@@ -17,12 +17,44 @@ const winOptions = [
   [4, 8, "free", 15, 19],
 ];
 
+const isChecked = (square) => {
+  let box = document.querySelector(`#square${square}`);
+  return box.classList.contains("stamped");
+};
+
+const checkBingos = () => {
+  for (let i = 0; i < winOptions.length; i++) {
+    // winOptions[i].every((square) => {
+    //   let box = document.querySelector(`square${square}`);
+    //   return box.classList.contains("stamped");
+    // })
+    if (winOptions[i].every(isChecked)) {
+      console.log("BINGO!");
+    }
+  }
+};
+
+/////////////
+/////////////
+/////////////
+/////////////
+/////////////
+/////////////
+/////////////
+/////////////
+/////////////
+/////////////
+/////////////
+/////////////
+/////////////
+/////////////
+
 const checkBingo = () => {
   let numBingos = 0;
   for (let i = 0; i < winOptions.length; i++) {
     // arr.every - learn about it at https://www.w3schools.com/jsref/jsref_every.asp
     const hasBingo = winOptions[i].every((square) =>
-      document.querySelector(`#square${square}`).classList.contains("stamped")
+      document.querySelector(`#square${SQUARE}`).classList.contains("stamped")
     );
     if (hasBingo) {
       // arr.forEach - learn about it at https://www.w3schools.com/jsref/jsref_foreach.asp
