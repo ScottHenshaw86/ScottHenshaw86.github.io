@@ -1,0 +1,111 @@
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.border {
+    width: 90vw;
+    height: 90vh;
+    margin: auto;
+    border: 2px solid black;
+    background-image: url('../img/1-1.png');
+    background-size: auto 100%;
+    z-index: -100;
+}
+
+.draggableBox {
+    position: absolute;
+    cursor: grab;
+    user-select: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: none;
+}
+
+#marioButton {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    text-decoration: none;
+    right: 10%;
+    top: 5%;
+    height: 70px;
+    width: 70px;
+    border: 2px solid red;
+    background-color: gray;
+}
+
+.small {
+    background-image: url('https://www.mariowiki.com/images/8/8e/SMB3_Smallmario.png');
+    height: 58px;
+    width: 46px;
+    background-size: auto 58px;
+}
+
+.mario {
+    background-image: url('https://www.mariowiki.com/images/archive/d/d8/20200402205710%21Super_Mario_SMB3.png');
+    height: 116px;
+    width: 89px;
+    background-size: auto 116px;
+}
+
+.fire {
+    background-image: url('https://www.mariowiki.com/images/archive/a/a7/20200407175446%21Fire_Mario_SMB3_Sprite.png');
+    height: 116px;
+    width: 89px;
+    background-size: auto 116px;
+}
+
+.raccoon {
+    background-image: url('https://www.mariowiki.com/images/archive/0/07/20200407175022%21Raccoon_Mario_SMB3.png');
+    height: 116px;
+    width: 89px;
+    background-size: auto 116px;
+}
+
+.box1 {
+    background-image: url('https://www.mariowiki.com/images/archive/d/d6/20180324150859%21Fire_Flower-SMB3-sprite.png');
+    height: 70px;
+    width: 70px;
+    background-size: 70px 70px;
+}
+
+.box2 {
+    background-image: url('https://www.mariowiki.com/images/7/79/Super_Leaf_SMAS_SMB3_level_sprite.png');
+    height: 70px;
+    width: 61px;
+    background-size: 61px 70px;
+}
+
+.box3 {
+    background-image: url('https://www.mariowiki.com/images/archive/4/4d/20161204210401%21Mushroomsmb3.png');
+    height: 70px;
+    width: 70px;
+    background-size: 70px 70px;
+}
+
+.box4 {
+    background-image: url('https://www.mariowiki.com/images/archive/c/c3/20180801134136%21SMB3_Goomba_Sprite.gif');
+    height: 70px;
+    width: 66px;
+    background-size: 66px 70px;
+}
+
+#marioButton {
+    position: absolute;
+    right: 10%;
+    top: 5%;
+    height: 5vh;
+    width: 5vw;
+    border: 2px solid red;
+    background-color: white;
+}
+
+.target {
+    position: absolute;
+    z-index: 0;
+    user-select: none;
+}
