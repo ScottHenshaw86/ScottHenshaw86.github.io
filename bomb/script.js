@@ -3,6 +3,18 @@ let numBombsDodged = 0;
 let bombsDodged = document.querySelector('h1');
 let gameOver = false;
 
+if('orientation' in screen){
+  window.screen.orientation.onchange = function() {
+        if (this.type.startsWith('landscape') && document.querySelector('#element').webkitRequestFullScreen) {
+          document.querySelector('#element').webkitRequestFullscreen();
+        } else {
+          if(document.webkitCancelFullScreen){
+              document.webkitExitFullscreen();
+          }
+        }
+  }
+}
+
 function generateRandomNumber(min, max) {
   const number = Math.floor(Math.random() * (max - min + 1)) + min;
   return number;
