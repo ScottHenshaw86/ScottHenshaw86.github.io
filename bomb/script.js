@@ -3,13 +3,16 @@ let numBombsDodged = 0;
 let bombsDodged = document.querySelector('h1');
 let gameOver = false;
 
+var elem = document.documentElement;
+
+/* View in fullscreen */
 function openFullscreen() {
-  if (document.requestFullscreen) {
-    document.requestFullscreen();
-  } else if (document.webkitRequestFullscreen) { /* Safari */
-    document.webkitRequestFullscreen();
-  } else if (document.msRequestFullscreen) { /* IE11 */
-    document.msRequestFullscreen();
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
   }
 }
 
