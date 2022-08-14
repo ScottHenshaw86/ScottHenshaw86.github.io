@@ -8,6 +8,7 @@ let full = document.querySelector('#full');
 
 /* View in fullscreen */
 function openFullscreen() {
+  console.log('full')
   if (elem.requestFullscreen) {
     elem.requestFullscreen();
   } else if (elem.webkitRequestFullscreen) { /* Safari */
