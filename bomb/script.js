@@ -3,15 +3,13 @@ let numBombsDodged = 0;
 let bombsDodged = document.querySelector('h1');
 let gameOver = false;
 
-if('orientation' in screen){
-  window.screen.orientation.onchange = function() {
-        if (this.type.startsWith('landscape') && document.querySelector('#element').webkitRequestFullScreen) {
-          document.querySelector('#element').webkitRequestFullscreen();
-        } else {
-          if(document.webkitCancelFullScreen){
-              document.webkitExitFullscreen();
-          }
-        }
+function openFullscreen() {
+  if (document.requestFullscreen) {
+    document.requestFullscreen();
+  } else if (document.webkitRequestFullscreen) { /* Safari */
+    document.webkitRequestFullscreen();
+  } else if (document.msRequestFullscreen) { /* IE11 */
+    document.msRequestFullscreen();
   }
 }
 
