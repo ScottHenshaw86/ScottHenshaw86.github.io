@@ -4,6 +4,7 @@ let bombsDodged = document.querySelector('h1');
 let gameOver = false;
 
 var elem = document.documentElement;
+let full = document.querySelector('#full');
 
 /* View in fullscreen */
 function openFullscreen() {
@@ -14,9 +15,10 @@ function openFullscreen() {
   } else if (elem.msRequestFullscreen) { /* IE11 */
     elem.msRequestFullscreen();
   }
+  full.style.display = "none";
 }
 
-openFullscreen();
+full.addEventListener('touchstart', openFullscreen);
 
 function generateRandomNumber(min, max) {
   const number = Math.floor(Math.random() * (max - min + 1)) + min;
