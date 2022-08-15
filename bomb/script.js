@@ -56,7 +56,7 @@ const createBomb = (delay) => {
   console.log(delay);
   if (gameOver) return;
   setTimeout(() => {
-    createBomb((numBombsDodged > 1 && numBombsDodged % 10 == 0 )? delay - 20 : delay);
+    createBomb((numBombsDodged > 1 && numBombsDodged % 10 == 0 )? delay - (delay * 0.02) : delay);
   }, delay)
   let bomb = document.createElement('div');
   bomb.className = "ob";
