@@ -1,25 +1,10 @@
 const player = document.querySelector(".player");
-let numBombsDodged = 0;
 let bombsDodged = document.querySelector('h1');
-let gameOver = false;
+let numBombsDodged;
+let gameOver;
 
 var elem = document.documentElement;
 let full = document.querySelector('#full');
-
-/* View in fullscreen */
-function openFullscreen() {
-  console.log('full')
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { /* Safari */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE11 */
-    elem.msRequestFullscreen();
-  }
-  full.style.display = "none";
-}
-
-full.addEventListener('touchstart', openFullscreen);
 
 function generateRandomNumber(min, max) {
   const number = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -90,64 +75,104 @@ const createBomb = (delay) => {
     }
   }, 4000)
 }
+let game;
 
-createBomb(1000);
-
-let game = setInterval(() => {
+const gameStop = () => {
   let obs = document.querySelectorAll(".ob");
   for (let i = 0; i < obs.length; i++) {
-    let bombL = obs[i].offsetLeft;
-    let bombR = obs[i].offsetLeft + obs[i].offsetWidth;
-    let bombTop = obs[i].offsetTop;
-    let bombBottom = obs[i].offsetTop + obs[i].offsetHeight;
-    let playerL = player.offsetLeft;
-    let playerR = player.offsetLeft + player.offsetWidth;
-    let playerTop = player.offsetTop;
-    // let playerBottom = player.offsetTop + player.offsetHeight;
+    obs[i].classList.add('explosion');
+  }
+  gameOver = true;
+  clearInterval(game);
+  clearInterval(moveInterval);
+  clearTimeout(removeBomb);
+  for (let ob of obs) {
+    // ob.style.animationPlayState === "paused";
+    ob.classList.add("dead");
+    document.querySelector("#haha").classList.add("show");
+    document.querySelector(".reset").classList.add("show");
+    window.removeEventListener("keydown", move);
+    document.querySelector('.left').removeEventListener('touchstart', moveLeft);
+    document.querySelector('.right').removeEventListener('touchstart', moveRight);
+  }
+}
 
-    if (bombR > playerL + 20 && bombL < playerR - 20 && bombBottom > playerTop + 10) {
-      console.log("COLLISION!");
-      console.log('bombL: ', bombL)
-      console.log('bombR: ', bombR)
-      console.log('bombTop: ', bombTop)
-      console.log('bombBottom: ', bombBottom)
-      console.log('playerL: ', playerL)
-      console.log('playerR: ', playerR)
-      console.log('playerTop: ', playerTop)
-      // console.log('playerBottom: ', playerBottom)
-      obs[i].classList.add('explosion');
-      gameOver = true;
-      clearInterval(game);
-      clearInterval(moveInterval);
-      clearTimeout(removeBomb);
-      for (let ob of obs) {
-        // ob.style.animationPlayState === "paused";
-        ob.classList.add("dead");
-        document.querySelector("#haha").classList.add("show");
-        window.removeEventListener("keydown", move);
-        document.querySelector('.left').removeEventListener('touchstart', moveLeft);
-document.querySelector('.right').removeEventListener('touchstart', moveRight);
+
+const gameStart = () => {
+  numBombsDodged = 0;
+gameOver = false;
+let obs = document.querySelectorAll(".ob");
+if (obs) {
+  obs.forEach((ob) => {
+    ob.remove();
+  })
+  document.querySelector("#haha").classList.remove("show");
+  document.querySelector(".reset").classList.remove("show");
+}
+  game = setInterval(() => {
+    let obs = document.querySelectorAll(".ob");
+    for (let i = 0; i < obs.length; i++) {
+      let bombL = obs[i].offsetLeft;
+      let bombR = obs[i].offsetLeft + obs[i].offsetWidth;
+      // let bombTop = obs[i].offsetTop;
+      let bombBottom = obs[i].offsetTop + obs[i].offsetHeight;
+      let playerL = player.offsetLeft;
+      let playerR = player.offsetLeft + player.offsetWidth;
+      let playerTop = player.offsetTop;
+      // let playerBottom = player.offsetTop + player.offsetHeight;
+  
+      if (bombR > playerL + 20 && bombL < playerR - 20 && bombBottom > playerTop + 10) {
+        gameStop();
       }
     }
-  }
-}, 100);
-
-window.addEventListener("keydown", move);
-window.addEventListener("keyup", function(e) {
-  if (e.key == "ArrowRight" || e.key == "ArrowLeft"){
+  }, 100);
+  window.addEventListener("keydown", move);
+  window.addEventListener("keyup", function(e) {
+    if (e.key == "ArrowRight" || e.key == "ArrowLeft"){
+      isMoving = false;
+      clearInterval(moveInterval);
+    }
+  });
+  
+  document.querySelector('.left').addEventListener('touchstart', moveLeft);
+  document.querySelector('.right').addEventListener('touchstart', moveRight);
+  document.querySelector('.left').addEventListener('touchend', function(e) {
+      isMoving = false;
+      clearInterval(moveInterval);
+  });
+  document.querySelector('.right').addEventListener('touchend', function(e) {
     isMoving = false;
     clearInterval(moveInterval);
+  });
+
+  createBomb(1000);
+}
+
+/* View in fullscreen */
+const openFullscreen = () => {
+  console.log('full')
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
   }
-});
+  full.style.display = "none";
+  gameStart();
+}
 
-document.querySelector('.left').addEventListener('touchstart', moveLeft);
-document.querySelector('.right').addEventListener('touchstart', moveRight);
-document.querySelector('.left').addEventListener('touchend', function(e) {
-    isMoving = false;
-    clearInterval(moveInterval);
-});
-document.querySelector('.right').addEventListener('touchend', function(e) {
-  isMoving = false;
-  clearInterval(moveInterval);
-});
+full.addEventListener('touchstart', openFullscreen);
 
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+  // true for mobile device
+  setTimeout(() => {
+    full.style.display = "block";
+  }, 2500)
+}else{
+  // false for not mobile device
+  gameStart();
+}
+
+document.querySelector(".reset").addEventListener('click', gameStart);
+document.querySelector(".reset").addEventListener('touchstart', gameStart);

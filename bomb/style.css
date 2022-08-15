@@ -109,4 +109,27 @@ h1 {
   border: 2px solid black;
   background-color: gray;
   z-index: 999;
+  display: none;
+}
+
+.reset {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0;
+  opacity: 0;
+  color: red;
+  text-align: center;
+  transition: all 0.5s;
+  border: 3px solid black;
+  z-index:9999;
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px 15px;
+}
+
+.reset.show {
+  font-size: 3em;
+  opacity: 1;
 }
