@@ -100,15 +100,15 @@ const gameStop = () => {
 
 const gameStart = () => {
   numBombsDodged = 0;
-gameOver = false;
-let obs = document.querySelectorAll(".ob");
-if (obs) {
-  obs.forEach((ob) => {
-    ob.remove();
-  })
-  document.querySelector("#haha").classList.remove("show");
-  document.querySelector(".reset").classList.remove("show");
-}
+  gameOver = false;
+  let obs = document.querySelectorAll(".ob");
+  if (obs) {
+    obs.forEach((ob) => {
+      ob.remove();
+    })
+    document.querySelector("#haha").classList.remove("show");
+    document.querySelector(".reset").classList.remove("show");
+  }
   game = setInterval(() => {
     let obs = document.querySelectorAll(".ob");
     for (let i = 0; i < obs.length; i++) {
@@ -174,5 +174,5 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
   gameStart();
 }
 
-document.querySelector(".reset").addEventListener('click', gameStart);
+// document.querySelector(".reset").addEventListener('click', gameStart);
 document.querySelector(".reset").addEventListener('touchstart', gameStart);
