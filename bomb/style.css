@@ -2,10 +2,11 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
+  user-select: none;
 }
 
 body {
-  background-image: url('./bg.jpg');
+  background-image: url("./bg.jpg");
   background-size: auto 100vh;
 }
 
@@ -23,7 +24,7 @@ h1 {
 }
 
 .player.jump {
-  animation: jump .6s linear 1;
+  animation: jump 0.6s linear 1;
 }
 
 @keyframes jump {
@@ -39,13 +40,13 @@ h1 {
 .ob {
   width: 7vh;
   height: 10vh;
-  background-image: url('./bomb2.png');
+  background-image: url("./bomb2.png");
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
   top: 0vh;
   animation: fall 4s 1 cubic-bezier(0.33333, 0, 0.66667, 0.33333);
-  transition: .5s;
+  transition: 0.5s;
 }
 
 @keyframes fall {
@@ -58,7 +59,7 @@ h1 {
 }
 
 .ob.explosion {
-  background-image: url('./explosion.png');
+  background-image: url("./explosion.png");
   width: 14vh;
   height: 20vh;
   transform: translateX(-18%);
@@ -123,7 +124,7 @@ h1 {
   text-align: center;
   transition: all 0.5s;
   border: 3px solid black;
-  z-index:9999;
+  z-index: 9999;
   background-color: white;
   border-radius: 10px;
   padding: 5px 15px;
