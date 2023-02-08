@@ -58,14 +58,13 @@ const clearBoard = () => {
 
 const handleClick = (e) => {
   if (hasWinner) return;
-  if (e.target.tagName !== "DIV") return;
-  if (e.target.classList.contains("x") || e.target.classList.contains("o")) {
+  if (e.currentTarget.classList.contains("x") || e.target.classList.contains("o")) {
     return;
   }
-  e.target.classList.add(currentPlayer);
+  e.currentTarget.classList.add(currentPlayer);
   const stamp = document.createElement("h1");
   stamp.textContent = currentPlayer;
-  e.target.appendChild(stamp);
+  e.currentTarget.appendChild(stamp);
   checkWinner();
   if (currentPlayer === "x") {
     currentPlayer = "o";
