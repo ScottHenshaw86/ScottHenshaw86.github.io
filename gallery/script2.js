@@ -101,8 +101,6 @@ let end = SHOW_NUM;
 const showMore = () => {
   start = end;
   end += SHOW_NUM;
-  let more = document.querySelector(".more");
-  body.removeChild(more);
   addCards();
 };
 
@@ -111,14 +109,10 @@ const addCards = () => {
     let card = document.createElement("div");
     card.className = "card photo";
     card.innerHTML = `<img src="${data[i].image}" /><h3>${data[i].title}</h3>`;
-    body.appendChild(card);
+    body.insertBefore(body.lastElementChild);
   }
-  if (end < data.length) {
-    let more = document.createElement("div");
-    more.onclick = showMore;
-    more.className = "card more";
-    more.innerHTML = `<h3>Show More!</h3><h1>+</h1>`;
-    body.appendChild(more);
+  if (end >= data.length) {
+    body.lasElementChild.remove();
   }
 };
 
