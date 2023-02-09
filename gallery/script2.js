@@ -109,7 +109,7 @@ const addCards = () => {
     let card = document.createElement("div");
     card.className = "card photo";
     card.innerHTML = `<img src="${data[i].image}" /><h3>${data[i].title}</h3>`;
-    body.insertBefore(body.lastElementChild);
+    body.insertBefore(card, body.lastElementChild);
   }
   if (end >= data.length) {
     body.lasElementChild.remove();
