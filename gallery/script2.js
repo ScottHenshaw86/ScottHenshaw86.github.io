@@ -112,7 +112,7 @@ const addCards = () => {
     body.insertBefore(card, body.lastElementChild);
   }
   if (end >= data.length) {
-    body.lasElementChild.remove();
+    body.lastElementChild.remove();
   }
 };
 
