@@ -1,0 +1,640 @@
+@font-face {
+    font-family: 'DeogonPrincess';
+    src: url(./DeogonPrincess.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    background: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+
+}
+
+
+.slider {
+    background-image: url(./images/photo1.jpg);
+    background-size: 30%;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+.menu {
+    position: fixed;
+    margin: 0;
+    width: 25%;
+}
+
+.main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    background-color: black;
+}
+
+.left {
+    width: 25%;
+    margin: 0;
+    display: inline-block;
+    position: relative;
+}
+
+.list ul {
+    list-style-type: none;
+    padding: 10%;
+    background: black;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.list a {
+    color: white;
+    font-size: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.list a:hover {
+    color: #CBE40C;
+    text-decoration: underline 2px solid #CBE40C;
+}
+
+.korean {
+    font-family: 'DeogonPrincess';
+}
+
+.logo {
+    margin: 0;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(152deg, rgba(0, 0, 0, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(151, 170, 223, 1) 100%);
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.logo p {
+    color: white;
+    text-align: center;
+    padding: 0px 6%;
+}
+
+.logo img {
+    outline: 2px solid white;
+    border-radius: 50%;
+}
+
+.logo a {
+    font-size: 1.9vw;
+    text-decoration: none;
+    color: white;
+
+}
+
+.logo a:hover {
+    color: rgb(151, 170, 223);
+
+}
+
+.logo img:hover {
+    outline: 2px solid rgb(151, 170, 223);
+    opacity: 0.5;
+}
+
+.wrapper {
+    background-image: url(./images/stpaul.png);
+    background-size: cover;
+    height: 90px;
+    width: 90px;
+    margin: auto;
+    transition: 0.5s;
+    outline: 2px solid rgb(151, 170, 223);
+    border-radius: 50%;
+}
+
+.wrapper:hover {
+    background-image: url(./images/hippo.png);
+}
+
+
+.right {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    width: 75%;
+    overflow: hidden;
+    background: rgb(238, 238, 238);
+    background: linear-gradient(0deg, rgba(238, 238, 238, 1) 0%, rgba(166, 166, 166, 1) 77%, rgba(68, 68, 68, 1) 100%);
+}
+
+.right p {
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+.header {
+    height: 140px;
+    background-image: url(images/school.jpg);
+    background-size: cover;
+}
+
+.header h1 {
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-align: right;
+    padding: 8.5vh;
+    color: orange;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.intro {
+    background-image: url(./images/main.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 370px;
+    padding-top: 50px;
+    width: 100%;
+}
+
+
+.sectionmain {
+    background-image: url(./images/gnb_bg.png), linear-gradient(0deg, rgb(45, 45, 45) 0%, rgba(0, 0, 0, 1) 100%);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    position: relative;
+    padding-bottom: 10px;
+    width: 100%;
+    color: white;
+}
+
+
+.section {
+    background-image: url(./images/gnb_bg.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    position: relative;
+    padding-bottom: 10px;
+    color: black;
+}
+
+
+.sectionmain p,
+.section p {
+    font-size: 18px;
+    padding: 30px 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.7;
+    text-align: left;
+}
+
+
+.section img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.typewriter {
+    width: 440px;
+    margin: auto;
+}
+
+.typewriter h1 {
+    margin-top: 60px;
+    color: black;
+    line-height: 1.2;
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange;
+    /* The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    letter-spacing: em;
+    /* Adjust as needed */
+    animation:
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: orange;
+    }
+}
+
+.mapouter {
+    padding-top: 0px;
+    padding-left: 0px;
+}
+
+table {
+    margin: auto;
+    width: 86%;
+    margin-top: 40px;
+}
+
+.vision {
+    width: 90%;
+    table-layout: fixed;
+}
+
+.vision td {
+    font-size: clamp(0.7rem, 3vw, 1.5rem);
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 1vw;
+    color: transparent;
+    transition: 0.5s;
+    user-select: none;
+}
+
+.vision td:hover {
+    color: purple;
+    font-display: block;
+}
+
+.vision img {
+    opacity: 0.5;
+    border-radius: 50%;
+    box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.7);
+    margin-bottom: 10px;
+    transition: 0.5s;
+}
+
+.vision img:hover {
+    animation: ease-in fade;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#mission p {
+    padding-top: 0;
+}
+
+.facts {
+    width: 85%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+
+}
+
+.facts td {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-family: 'Sofia Sans Condensed', sans-serif;
+    font-weight: normal;
+    text-align: left;
+    text-transform: uppercase;
+    padding: 3% 1.5% 1% 2%;
+    width: 50%;
+    vertical-align: top;
+}
+
+#factbottom {
+    text-align: center;
+    text-transform: none;
+}
+
+.facts img {
+    width: clamp(4rem, 8vw, 9rem);
+    padding-right: 5%;
+    float: left;
+    padding-bottom: 3vh;
+}
+
+
+.acclogos {
+    height: 4.5vw;
+    text-align: center;
+}
+
+.acclogos img {
+    width: auto;
+    height: 7vh;
+    padding: 5px;
+}
+
+
+.accredit {
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.accredit td {
+    width: 50%;
+    margin-right: 20px;
+    padding: 0 1vw;
+    vertical-align: text-top;
+}
+
+#contact img {
+    float: right;
+    width: 50%;
+    border-radius: 15px;
+    margin-left: 10px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+.footer a {
+    text-decoration: none;
+    font-size: x-large;
+    color: orange;
+}
+
+.footer a:hover {
+    text-decoration: none;
+    color: orangered;
+}
+
+
+.itop {
+    display: none;
+}
+
+
+form {
+    margin: 0 12% 30px 12%;
+
+}
+
+label {
+    font-size: 23px;
+    font-family: 'Sofia Sans Condensed', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    line-height: 2em;
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    font-size: 18px;
+
+}
+
+select {
+    height: 27px;
+}
+
+option {
+    font-size: 18px;
+}
+
+#contact p {
+    padding-bottom: 0;
+}
+
+input {
+    font-size: 18px;
+    width: 150px;
+}
+
+@media screen and (max-width: 680px) {
+    #contact img {
+        width: 100%;
+        margin-bottom: 20px;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 543px) {
+    #contact img {
+        width: 100%;
+        margin-bottom: 20px;
+        margin-left: 0;
+    }
+
+    #fivevalues {
+        padding: 7vh;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    .section,
+    .intro {
+        scroll-margin-top: 68px;
+    }
+
+    .left {
+        display: none;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .right {
+        width: 100%;
+        margin-top: 68px;
+    }
+
+    body {
+        font-size: 0;
+    }
+
+    .itop {
+        width: 100vw;
+        position: fixed;
+        margin-top: 0;
+        display: block;
+        z-index: 2;
+    }
+
+    ul.nav {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        list-style-type: none;
+    }
+
+    .dropdown ul {
+        list-style-type: none;
+        color: white;
+        margin-block-start: 0;
+        padding-top: 10px;
+    }
+
+    .imenu {
+        display: flex;
+    }
+
+    .ileft {
+        position: relative;
+        display: inline-block;
+        border: 2px solid rgba(151, 170, 223, 1);
+        border-radius: 50%;
+    }
+
+    .iright {
+        position: relative;
+        display: inline-block;
+        padding: 5px;
+        margin-top: -2px;
+    }
+
+
+
+    .imenu2 {
+        display: flex;
+        /* padding-right: 25px; */
+    }
+
+
+    ul.nav {
+        background: rgb(0, 0, 0);
+        background: linear-gradient(152deg, rgba(9, 9, 121, 1) 0%, rgba(0, 0, 0, 1) 100%);
+        height: 48px;
+        padding: 10px;
+
+    }
+
+
+    ul.nav li {
+        width: 180px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: bold;
+        font-size: 14px;
+        letter-spacing: 3px;
+        padding: 10px 0;
+        margin-right: 7px;
+
+    }
+
+    ul.nav a {
+        text-decoration: none;
+        display: block;
+        color: white;
+    }
+
+    ul.nav a:hover {
+        color: rgba(151, 170, 223, 1);
+    }
+
+    .header h1 {
+        text-align: center;
+    }
+
+    .dropdown ul a:hover {
+        color: #CBE40C;
+    }
+
+    input[type=radio] {
+        -webkit-appearance: none;
+        display: block;
+        width: 170px;
+        padding-bottom: 20px;
+        text-align: center;
+        font-size: 20px;
+        color: orange;
+        cursor: pointer;
+        transition: 0.5s;
+        background-color: transparent;
+    }
+
+
+    input[type=radio]:checked~.sub {
+        display: block;
+    }
+
+
+    #yes:before {
+        content: 'MENU';
+        letter-spacing: 3px;
+        font-family: 'Trebuchet MS';
+    }
+
+    #no:before {
+        content: url(../StPaul/images/caret-arrow-up.png)
+    }
+
+    #no:before a:hover {
+        content: url(../StPaul/images/caret-arrow-up-hover.png)
+    }
+
+    .dropdown {
+        max-height: 0;
+        overflow-y: hidden;
+        transition: max-height 1s ease-in-out;
+        background-color: rgba(0, 0, 0, 0.8);
+        /* border-bottom: 5px solid orange; */
+    }
+
+    #yes:checked~.dropdown {
+        max-height: 265px;
+    }
+
+    .wrapper {
+        height: 45px;
+        width: 45px;
+    }
+
+    .facts img {
+        padding-bottom: 4vh;
+    }
+
+}
