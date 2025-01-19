@@ -1,0 +1,194 @@
+:root {
+    --bg-color: #FAFAFA;
+    --primary-color: #00BCD4;
+    --dark-primary-color: #0097A7;
+    --light-primary-color: #B2EBF2;
+    --text-primary-color: #FFFFFF;
+    --accent-color: #FF4081;
+    --primary-text-color: #212121;
+    --secondary-text-color: #757575;
+    --divider-color: #BDBDBD;
+    --easy: #379634;
+    --medium: #f7cb15;
+    --hard: #841c26;
+    --insane: #3b2f2f ;
+    --shadow: 0 3px 10px rgba(0,0,0,.2);
+    --border-radius: 1.1em;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+body {
+    background-color: var(--bg-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    padding: 0 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    box-shadow: var(--shadow);
+    z-index: 1;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin-bottom: 5px;
+}
+
+h1 {
+    color: var(--text-primary-color);
+    font-size: 4em;
+    margin-bottom: .5em;
+    text-shadow: 0px 0px 3px rgba(0,0,0,.2);
+    white-space: nowrap;
+}
+
+h2 {
+    color: var(--light-primary-color);
+    font-size: 2.5em;
+    margin-bottom: .8em;
+    text-shadow: 0px 0px 3px rgba(0,0,0,.2);
+}
+
+header h3 {
+    color: var(--primary-text-color);
+}
+
+.confirm {
+    position: relative;
+    top: 10px;
+    background-color: var(--accent-color);
+    color: var(--text-primary-color);
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.levelsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    width: clamp(230px, 100%, 865px);
+    /* width: 50%;
+    min-width: 230px; */
+    box-shadow: var(--shadow);
+    padding: 70px 20px 20px 20px;
+    opacity: 0;
+    position: relative;
+    top: -200px;
+    transition: top .4s ease, opacity .6s ease;
+}
+
+#openLevels {
+    visibility: hidden;
+}
+
+#openLevels:checked ~ .levelsContainer {
+    opacity: 1;
+    top: 10px;
+}
+
+.levelsContainer > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 90px;
+    border-radius: var(--border-radius);
+    border: .5em solid var(--bg-color);
+}
+
+.levelsContainer i {
+    margin-right: .5em;
+    font-size: larger;
+}
+
+.levelsContainer {
+    color: var(--primary-text-color);
+}
+
+.easy {
+    background-color: var(--easy);
+}
+.medium {
+    background-color: var(--medium);
+}
+.hard {
+    background-color: var(--hard);
+}
+
+.insane {
+    background-color: var(--insane);
+}
+
+.hard, .insane {
+    color: var(--text-primary-color);
+}
+
+.level {
+    position: absolute;
+    top: 28px;
+}
+
+.nolevel-text {
+    display: block;
+}
+.easy-text {
+    display: none;
+}
+.medium-text {
+    display: none;
+}
+.hard-text {
+    display: none;
+}
+.insane-text {
+    display: none;
+}
+
+.easy:hover ~.nolevel-text, 
+.medium:hover ~.nolevel-text,
+.hard:hover ~.nolevel-text,
+.insane:hover ~.nolevel-text{
+    display: none;
+}
+
+.easy:hover ~ .easy-text{
+    display: block;
+}
+.medium:hover ~ .medium-text{
+    display: block;
+}
+.hard:hover ~ .hard-text{
+    display: block;
+}
+.insane:hover ~ .insane-text{
+    display: block;
+}
+
+

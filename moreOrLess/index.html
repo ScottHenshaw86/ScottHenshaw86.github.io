@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3593046a76.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="MoL.css">
+    <title>More Or Less</title>
+</head>
+
+<body>
+    <header>
+        <h1>
+            <i class="fa-solid fa-circle-up"></i>More Or Less<i class="fa-solid fa-circle-down"></i>
+        </h1>
+        <h2>Let's play a game!</h2>
+        <div class="rules">
+            <h3>Rules: Guess a number within the range. The game continues until you successfully guess the correct
+                number. Good luck!</h3>
+        </div>
+        <div class="confirm">
+            <label for="openLevels">Click here if you understand the rules</label>
+        </div>
+    </header>
+    <main>
+        <input type="checkbox" id="openLevels">
+        <div class="levelsContainer">
+            <div class="easy" onclick="playGame(1, 10, 4)">
+                <h3><i class="fa-solid fa-baby"></i>Easy</h3>
+                <p>1-10</p>
+                <p>3 guesses</p>
+            </div>
+            <div class="medium" onclick="playGame(1, 100, 6)">
+                <h3><i class="fa-solid fa-dumbbell"></i>Medium</h3>
+                <p>1-100</p>
+                <p>5 guesses</p>
+            </div>
+            <div class="hard" onclick="playGame(1, 250, 8)">
+                <h3><i class="fa-solid fa-dragon"></i></i>Expert</h3>
+                <p>1-250</p>
+                <p>7 guesses</p>
+            </div>
+            <div class="insane" onclick="playGame(1, 1000, 9)">
+                <h3><i class="fa-solid fa-skull"></i>Insane</h3>
+                <p>1-1000</p>
+                <p>9 guesses</p>
+            </div>
+            <h3 class="level nolevel-text">Go on, choose a level!</h3>
+            <h3 class="level easy-text">Even a baby can do it!</h3>
+            <h3 class="level medium-text">This should be fun~</h3>
+            <h3 class="level hard-text">Ooh, someone's brave today!</h3>
+            <h3 class="level insane-text">You must have a death wish</h3>
+        </div>
+    </main>
+    <script src="MoL.js"></script>
+</body>
+
+</html>
